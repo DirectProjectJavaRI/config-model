@@ -15,7 +15,7 @@
 	<parent>
 	   <groupId>org.springframework.boot</groupId>
 	   <artifactId>spring-boot-dependencies</artifactId>
-	   <version>2.1.1.RELEASE</version>
+	   <version>2.1.2.RELEASE</version>
 	</parent>	
     <developers>
         <developer>
@@ -53,12 +53,10 @@
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-annotations</artifactId>
-		    <version>${jackson.version}</version>
 		</dependency>    		    		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
@@ -75,7 +73,6 @@
         <dependency>
           <groupId>org.mockito</groupId>
           <artifactId>mockito-core</artifactId>
-          <version>2.21.0</version>
           <scope>test</scope>
         </dependency>					
 	</dependencies>
@@ -119,7 +116,6 @@
 		      <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-source-plugin</artifactId>
-		        <version>3.0.1</version>
 		        <executions>
 		          <execution>
 		            <goals>
