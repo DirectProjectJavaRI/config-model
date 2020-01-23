@@ -33,7 +33,7 @@ public class Setting
 {
     private String name;
     private String value;
-    private long id;
+    private long id = -1;
     private Calendar createTime;
     private Calendar updateTime;
     private EntityStatus status;

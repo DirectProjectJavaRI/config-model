@@ -29,7 +29,7 @@ package org.nhindirect.config.model;
 ///CLOVER:OFF
 public class TrustBundleDomainReltn 
 {
-	private long id;
+	private long id = -1;
 	
 	private Domain domain;
 	

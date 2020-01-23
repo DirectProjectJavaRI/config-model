@@ -33,7 +33,7 @@ public class Address
 {
     private String emailAddress;
 
-    private long id;
+    private long id = -1;
 
     private String displayName;
     

@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 ///CLOVER:OFF
 public class TrustBundleAnchor 
 {
-    private long id;
+    private long id = -1;
     private byte[] anchorData;
     private String thumbprint;
     private Calendar validStartDate;

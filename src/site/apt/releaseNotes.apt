@@ -6,6 +6,24 @@
         Greg Meyer
         ---
 
+{7.0}
+
+    Changes included with release 7.0
+    
+    []
+    
+    Enhancements
+    
+ 	* Updating to SpringBoot 2.2.4
+ 	
+ 	* Defaulting unassigned model object ids to -1.
+
+    [] 
+     
+    Bug Fixes
+
+    * NA
+
 {6.0}
 
     Changes included with release 6.0

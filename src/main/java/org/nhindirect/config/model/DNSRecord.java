@@ -31,7 +31,7 @@ import java.util.Calendar;
 ///CLOVER:OFF
 public class DNSRecord 
 {
-    private long id;
+    private long id = -1;
 	private String name;
 	private int type;
 	private int dclass;
