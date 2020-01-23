@@ -199,8 +199,7 @@
 	                </goals>
 	              </execution>
 	            </executions>					
-			</plugin>	
-			<!--  for releases only 					
+			</plugin>						
 	        <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-gpg-plugin</artifactId>
@@ -214,7 +213,6 @@
                  </execution>
                </executions>
             </plugin>
-            -->	
 		</plugins>	
 	</build>
 	<reporting>
