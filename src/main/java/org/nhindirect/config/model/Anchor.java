@@ -46,7 +46,7 @@ public class Anchor
     private String thumbprint;
     private long certificateId;
     private byte[] certificateData;
-    private long id;
+    private long id = -1;
     private Calendar createTime;
     private Calendar validStartDate;
     private Calendar validEndDate;

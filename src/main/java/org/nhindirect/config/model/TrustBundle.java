@@ -44,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class TrustBundle
 {
 	
-	private long id;
+	private long id = -1;
 	private String bundleName;
 	private String bundleURL;
     private byte[] signingCertificateData;

@@ -33,7 +33,7 @@ public class Certificate
 {
     private String owner;
     private String thumbprint;
-    private long id;
+    private long id = -1;
     private byte[] data;
     private Calendar createTime;
     private Calendar validStartDate;

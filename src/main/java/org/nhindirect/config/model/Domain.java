@@ -44,7 +44,7 @@ public class Domain
 
     private Collection<Address> addresses;
 
-    private long id;
+    private long id = -1;
 
     private EntityStatus status;
     
