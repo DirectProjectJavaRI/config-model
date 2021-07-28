@@ -24,12 +24,18 @@ package org.nhindirect.config.model;
 import java.util.Calendar;
 import org.nhindirect.policy.PolicyLexicon;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Data;
+
 /**
  * Certificate policy.
  * @author Greg Meyer
  * @since 1.0
  */
 ///CLOVER:OFF
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CertPolicy 
 {
 	private String policyName;
@@ -39,86 +45,6 @@ public class CertPolicy
 	private Calendar createTime;  
 	
 	private PolicyLexicon lexicon;
-	
-	/**
-	 * Empty constructor
-	 */
-	public CertPolicy()
-	{
-		
-	}
-
-	/**
-	 * Gets the name of the policy.  Policy names are unique and case sensitive.
-	 * @return The name of the policy.
-	 */
-	public String getPolicyName() 
-	{
-		return policyName;
-	}
-
-	/**
-	 * Sets the name of the policy.  Policy names are unique and case sensitive.
-	 * @param policyName The name of the policy.
-	 */
-	public void setPolicyName(String policyName) 
-	{
-		this.policyName = policyName;
-	}
-
-	/**
-	 * Gets the policy definition in byte array format.
-	 * @return The policy definition.
-	 */
-	public byte[] getPolicyData() 
-	{
-		return policyData;
-	}
-
-	/**
-	 * Sets the policy definition in byte array format.
-	 * @param policyData The policy definition
-	 */
-	public void setPolicyData(byte[] policyData) 
-	{
-		this.policyData = policyData;
-	}
-
-	/**
-	 * Gets the time the policy was imported into the system.
-	 * @return The time the policy was imported into the system.
-	 */
-	public Calendar getCreateTime() 
-	{
-		return createTime;
-	}
-
-	/**
-	 * Sets the time the policy was imported into the system.
-	 * @param createTime The time the policy was imported into the system.
-	 */
-	public void setCreateTime(Calendar createTime) 
-	{
-		this.createTime = createTime;
-	}
-	
-	/**
-	 * Gets the lexicon that this policy is written in.
-	 * @return The lexicon that this policy is written in.
-	 */
-	public PolicyLexicon getLexicon()
-	{
-		return this.lexicon;
-	}
-	
-	/**
-	 * Sets the lexicon that this policy is written in.
-	 * @param lexicon The lexicon that this policy is written in.
-	 */
-	public void setLexicon(PolicyLexicon lexicon)
-	{
-		this.lexicon = lexicon;
-	}
 }
 ///CLOVER:ON
 
