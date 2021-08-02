@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nhind</groupId>
 	<artifactId>config-model</artifactId>
-	<version>8.0.0-SNAPSHOT</version>
+	<version>8.0.0</version>
 	<packaging>jar</packaging>
 	<name>NHIN Direct Java RI - Configuration Service Data Model</name>
     <description>NHIN Direct Java RI Configurstion Service Data Model</description>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>direct-policy</artifactId>
-			<version>8.0.0-SNAPSHOT</version>
+			<version>8.0.0</version>
 			<type>jar</type>
 		</dependency>	
 	    <dependency>
