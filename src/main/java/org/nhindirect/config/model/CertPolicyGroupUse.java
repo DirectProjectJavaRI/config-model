@@ -21,97 +21,23 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.nhindirect.config.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Data;
+
 /**
  * Certificate policy usages.
  * @author Greg Meyer
  * @since 1.0
  */
 ///CLOVER:OFF
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CertPolicyGroupUse
 {
 	private CertPolicy policy;
 	private CertPolicyUse policyUse;
 	private boolean incoming;
 	private boolean outgoing;
-	
-	/**
-	 * Empty constructor
-	 */
-	public CertPolicyGroupUse()
-	{
-		
-	}
-
-	/**
-	 * Gets the policy that is associated with the policy group.
-	 * @return The policy that is associated with the policy group.
-	 */
-	public CertPolicy getPolicy() 
-	{
-		return policy;
-	}
-
-	/**
-	 * Sets the policy that is associated with the policy group.
-	 * @param policy The policy that is associated with the policy group.
-	 */
-	public void setPolicy(CertPolicy policy) 
-	{
-		this.policy = policy;
-	}
-
-	/**
-	 * Gets the usage enumeration that indicates where the policy should be applied.
-	 * @return The usage enumeration that indicates where the policy should be applied.
-	 */
-	public CertPolicyUse getPolicyUse() 
-	{
-		return policyUse;
-	}
-
-	/**
-	 * Sets the usage enumeration that indicates where the policy should be applied.
-	 * @param policyUse The usage enumeration that indicates where the policy should be applied.
-	 */
-	public void setPolicyUse(CertPolicyUse policyUse) 
-	{
-		this.policyUse = policyUse;
-	}
-
-	/**
-	 * Indicates if the policy should be applied to incoming messages.
-	 * @return True if the policy should be applied to incoming messages.  False otherwise.
-	 */
-	public boolean isIncoming() 
-	{
-		return incoming;
-	}
-
-	/**
-	 * Sets the incoming message usage flag.
-	 * @param incoming True if the policy should be applied to incoming messages.  False otherwise.
-	 */
-	public void setIncoming(boolean incoming) 
-	{
-		this.incoming = incoming;
-	}
-
-	/**
-	 * Indicates if the policy should be applied to outgoing messages.
-	 * @return True if the policy should be applied to outgoing messages.  False otherwise.
-	 */
-	public boolean isOutgoing() 
-	{
-		return outgoing;
-	}
-
-	/**
-	 * Sets the outgoing message usage flag.
-	 * @param outgoing True if the policy should be applied to outgoing messages.  False otherwise.
-	 */
-	public void setOutgoing(boolean outgoing) 
-	{
-		this.outgoing = outgoing;
-	}
 }
 ///CLOVER:ON

@@ -376,7 +376,12 @@ public class CertUtils
      */
     public static CertContainer toCertContainer(byte[] data) throws CertificateConversionException 
     {
-    	return toCertContainer(data, "".toCharArray(), "".toCharArray());
+    	return toCertContainer(data, true);
+    }
+    
+    public static CertContainer toCertContainer(byte[] data, boolean loadPrivateKey) throws CertificateConversionException 
+    {
+    	return toCertContainer(data, "".toCharArray(), "".toCharArray(), loadPrivateKey);
     }
     
     protected static boolean isByteDataWrappedKeyPair(byte[] data)
@@ -392,6 +397,11 @@ public class CertUtils
     	return true;
     }
     
+	public static CertContainer toCertContainer(byte[] data, char[] keyStorePassPhrase, char[] privateKeyPassPhrase) throws CertificateConversionException 
+	{
+		return toCertContainer(data, keyStorePassPhrase, privateKeyPassPhrase, true);
+	}
+    
     /**
      * Creates a certificate container that consists of the X509 certificate and its private key (if it exists).
      * @param data A DER encoded representation of either an X509 certificate, an unencrypted PKCS12 container, or
@@ -400,7 +410,8 @@ public class CertUtils
      * @throws CertificateConversionException
      */
     @SuppressWarnings("deprecation")
-	public static CertContainer toCertContainer(byte[] data, char[] keyStorePassPhrase, char[] privateKeyPassPhrase) throws CertificateConversionException 
+	public static CertContainer toCertContainer(byte[] data, char[] keyStorePassPhrase, char[] privateKeyPassPhrase,
+			boolean loadPrivateKey) throws CertificateConversionException 
     {
     	CertContainer certContainer = null;
         try 
@@ -452,12 +463,17 @@ public class CertUtils
         			X509Certificate cert = (X509Certificate)localKeyStore.getCertificate(alias);
         			
     				// check if there is private key
-    				Key key = localKeyStore.getKey(alias, privateKeyPassPhrase);
-    				if (key != null && key instanceof PrivateKey) 
-    				{
-    					certContainer = new CertContainer(cert, key);
-    					
-    				}
+        			if (loadPrivateKey)
+        			{
+	    				Key key = localKeyStore.getKey(alias, privateKeyPassPhrase);
+	    				if (key != null && key instanceof PrivateKey) 
+	    				{
+	    					certContainer = new CertContainer(cert, key);
+	    					
+	    				}
+        			}
+        			else
+        				certContainer = new CertContainer(cert, (Key)null);
         		}
             }
             catch (Exception e)

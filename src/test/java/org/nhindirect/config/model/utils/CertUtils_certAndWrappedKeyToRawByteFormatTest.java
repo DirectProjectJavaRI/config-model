@@ -1,16 +1,16 @@
 package org.nhindirect.config.model.utils;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.nhindirect.config.model.utils.CertUtils.CertContainer;
 
 public class CertUtils_certAndWrappedKeyToRawByteFormatTest 
@@ -22,7 +22,7 @@ public class CertUtils_certAndWrappedKeyToRawByteFormatTest
 		final byte[] key = FileUtils.readFileToByteArray(new File("./src/test/resources/certs/gm2552Key.der"));
 		final X509Certificate cert = CertUtils.toX509Certificate(FileUtils.readFileToByteArray(new File("./src/test/resources/certs/gm2552.der")));
 		
-		byte[] rawBytes = CertUtils.certAndWrappedKeyToRawByteFormat(key, cert);
+		final byte[] rawBytes = CertUtils.certAndWrappedKeyToRawByteFormat(key, cert);
 		
 		assertNotNull(rawBytes);
 		
@@ -41,7 +41,7 @@ public class CertUtils_certAndWrappedKeyToRawByteFormatTest
 		final CertUtils.CertContainer cont = CertUtils.toCertContainer(rawP12);
 		
 		
-		byte[] rawBytes = CertUtils.certAndWrappedKeyToRawByteFormat(cont.getKey().getEncoded(), cont.getCert());
+		final byte[] rawBytes = CertUtils.certAndWrappedKeyToRawByteFormat(cont.getKey().getEncoded(), cont.getCert());
 		
 		assertNotNull(rawBytes);
 		

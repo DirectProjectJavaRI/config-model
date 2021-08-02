@@ -21,11 +21,17 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.nhindirect.config.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Data;
+
 /**
  * Certificate policy/group relationships.
  * @author Greg Meyer
  * @since 1.0
  */
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CertPolicyGroupDomainReltn 
 {
 	private long id;
@@ -33,68 +39,5 @@ public class CertPolicyGroupDomainReltn
 	private Domain domain;
 	
 	private CertPolicyGroup policyGroup;
-	
-	/**
-	 * Empty constructor.
-	 */
-	public CertPolicyGroupDomainReltn()
-	{
-		
-	}
-
-	/**
-	 * Gets the internal id of the relationship.
-	 * @return  The internal id of the relationship.
-	 */
-	public long getId() 
-	{
-		return id;
-	}
-
-	/**
-	 * Sets the internal id of the relationship.
-	 * @param id The internal id of the relationship.
-	 */
-	public void setId(long id) 
-	{
-		this.id = id;
-	}
-
-	/**
-	 * Gets the domain that is associate to the policy group.
-	 * @return The domain that is associate to the policy group.
-	 */
-	public Domain getDomain() 
-	{
-		return domain;
-	}
-
-	/**
-	 * Sets the domain that is associate to the policy group.
-	 * @param domain The domain that is associate to the policy group.
-	 */
-	public void setDomain(Domain domain) 
-	{
-		this.domain = domain;
-	}
-
-	/**
-	 * Gets the policy group associated to the domain.
-	 * @return The policy group associated to the domain.
-	 */
-	public CertPolicyGroup getPolicyGroup() 
-	{
-		return policyGroup;
-	}
-
-	/**
-	 * Sets the policy group associated to the domain.
-	 * @param policyGroup The policy group associated to the domain.
-	 */
-	public void setPolicyGroup(CertPolicyGroup policyGroup) 
-	{
-		this.policyGroup = policyGroup;
-	}
-	
 	
 }

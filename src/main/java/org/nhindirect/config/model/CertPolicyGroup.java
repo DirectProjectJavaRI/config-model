@@ -26,44 +26,24 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Data;
+
 /**
  * Certificate policy group.
  * @author Greg Meyer
  * @since 1.0
  */
 ///CLOVER:OFF
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CertPolicyGroup 
 {
 	private String policyGroupName;
 	private Collection<CertPolicyGroupUse> policies;
     private Calendar createTime;  
     
-    /**
-     * Empty constructor
-     */
-    public CertPolicyGroup()
-    {
-    	
-    }
-
-    /**
-     * Gets the policy group name.
-     * @return The policy group name.
-     */
-	public String getPolicyGroupName() 
-	{
-		return policyGroupName;
-	}
-
-	/**
-	 * Gets the policy group name.
-	 * @param policyGroupName The policy group name.
-	 */
-	public void setPolicyGroupName(String policyGroupName) 
-	{
-		this.policyGroupName = policyGroupName;
-	}
-
 	/**
 	 * Gets the collection of policy usages for this group.
 	 * @return The collection of policy usages for this group.
@@ -84,25 +64,6 @@ public class CertPolicyGroup
 	{
 		this.policies = new ArrayList<CertPolicyGroupUse>(policies);
 	}
-
-	/**
-	 * Gets the date/time this group was created.
-	 * @return The date/time this group was created.
-	 */
-	public Calendar getCreateTime() 
-	{
-		return createTime;
-	}
-
-	/**
-	 * Sets the date/time this group was created.
-	 * @param createTime The date/time this group was created.
-	 */
-	public void setCreateTime(Calendar createTime) 
-	{
-		this.createTime = createTime;
-	}
-    
     
 }
 ///CLOVER:ON
