@@ -14,14 +14,14 @@
 	</scm>
    <properties>
       <dnsjava.version>3.6.3</dnsjava.version>
-      <commons-io.version>2.19.0</commons-io.version>
+      <commons-io.version>2.21.0</commons-io.version>
       <commons-collections4.version>4.5.0</commons-collections4.version>      
-      <bcprov-jdk18on.version>1.80</bcprov-jdk18on.version>
-   </properties>	
+      <bcprov-jdk18on.version>1.83</bcprov-jdk18on.version>
+   </properties>
    <parent>
 	   <groupId>org.springframework.boot</groupId>
 	   <artifactId>spring-boot-dependencies</artifactId>
-	   <version>3.5.0</version>
+	   <version>4.0.1</version>
 	   <relativePath />
    </parent>
     <developers>
