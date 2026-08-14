@@ -409,7 +409,6 @@ public class CertUtils
      * @return A container object with the X509 certificate and private key (it it exists).
      * @throws CertificateConversionException
      */
-    @SuppressWarnings("deprecation")
 	public static CertContainer toCertContainer(byte[] data, char[] keyStorePassPhrase, char[] privateKeyPassPhrase,
 			boolean loadPrivateKey) throws CertificateConversionException 
     {
@@ -500,7 +499,6 @@ public class CertUtils
         return certContainer;
     }
     
-    @SuppressWarnings("deprecation")
 	public static byte[] certAndWrappedKeyToRawByteFormat(byte[] wrappedKey, X509Certificate cert) throws CertificateConversionException 
     {
     	final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
